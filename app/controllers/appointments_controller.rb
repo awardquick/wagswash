@@ -69,19 +69,17 @@ class AppointmentsController < ApplicationController
     end
 
 	def set_end_time
-		if @appointment.service_types = 0 
+		if @appointment.service_types === 0 
 			end_time = @appointment.time.to_i + 2700
 			@appointment.end_time = Time.at(end_time).utc
-			@appointment.save
-		elsif @appointment.service_types = 1
+		elsif @appointment.service_types === 1
 			end_time = @appointment.time.to_i + 7200
 			@appointment.end_time = Time.at(end_time).utc
-			@appointment.save
-		elsif @appointment.service_types = 3
+		elsif @appointment.service_types === 2
 			end_time = @appointment.time.to_i + 32400
 			@appointment.end_time = Time.at(end_time).utc
-			@appointment.save
 		end
+		@appointment.save
 	end
 
     # Never trust parameters from the scary internet, only allow the white list through.
