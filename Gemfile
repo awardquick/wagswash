@@ -37,6 +37,16 @@ gem 'validates_overlap'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+#adds bootstrap to application 
+gem 'bootstrap', '~> 4.1.1'
+
+#add jquery for bootstrap
+gem 'jquery-rails'
+
+gem "autoprefixer-rails"
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
