@@ -70,11 +70,17 @@ class AppointmentsController < ApplicationController
 
 	def set_end_time
 		if @appointment.service_types = 0 
-			@appointment.end_time = @appointment.time + (45.min)
-			#strftime("%I:%M%p")
-		else
-			@appointment.end_time = @appointment.time + (20.min)
-			#strftime("%I:%M%p")
+			end_time = @appointment.time.to_i + 2700
+			@appointment.end_time = Time.at(end_time).utc
+			@appointment.save
+		elsif @appointment.service_types = 1
+			end_time = @appointment.time.to_i + 7200
+			@appointment.end_time = Time.at(end_time).utc
+			@appointment.save
+		elsif @appointment.service_types = 3
+			end_time = @appointment.time.to_i + 32400
+			@appointment.end_time = Time.at(end_time).utc
+			@appointment.save
 		end
 	end
 
