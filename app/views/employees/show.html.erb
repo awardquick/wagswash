@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Lunch break time:</strong>
+  <%= @employee.lunch_break_time %>
+</p>
+
+<p>
+  <strong>First break time:</strong>
+  <%= @employee.first_break_time %>
+</p>
+
+<p>
+  <strong>Second break time:</strong>
+  <%= @employee.second_break_time %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

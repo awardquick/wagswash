@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lunch_break_time: MyString
+  first_break_time: MyString
+  second_break_time: MyString
+
+two:
+  name: MyString
+  lunch_break_time: MyString
+  first_break_time: MyString
+  second_break_time: MyString

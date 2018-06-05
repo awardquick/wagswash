@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :schedules
+  resources :employees
   resources :pets
   resources :appointments
   resources :users
