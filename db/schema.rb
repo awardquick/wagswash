@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_213624) do
+ActiveRecord::Schema.define(version: 2018_06_05_151611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,18 @@ ActiveRecord::Schema.define(version: 2018_06_04_213624) do
     t.string "employee_name"
     t.integer "service_types"
     t.datetime "end_time"
+    t.bigint "schedule_id"
+    t.index ["schedule_id"], name: "index_appointments_on_schedule_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "lunch_break_time"
+    t.string "first_break_time"
+    t.string "second_break_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pets", force: :cascade do |t|
@@ -35,6 +46,13 @@ ActiveRecord::Schema.define(version: 2018_06_04_213624) do
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "employee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_schedules_on_employee_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -44,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_06_04_213624) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "appointments", "schedules"
   add_foreign_key "appointments", "users"
   add_foreign_key "pets", "users"
+  add_foreign_key "schedules", "employees"
 end
