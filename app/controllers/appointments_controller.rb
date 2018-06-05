@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  after_action :set_end_time, only: [:create]
 
   # GET /appointments
   # GET /appointments.json
@@ -66,6 +67,16 @@ class AppointmentsController < ApplicationController
     def set_appointment
       @appointment = Appointment.find(params[:id])
     end
+
+	def set_end_time
+		if @appointment.service_types = 0 
+			@appointment.end_time = @appointment.time + (45.min)
+			#strftime("%I:%M%p")
+		else
+			@appointment.end_time = @appointment.time + (20.min)
+			#strftime("%I:%M%p")
+		end
+	end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
