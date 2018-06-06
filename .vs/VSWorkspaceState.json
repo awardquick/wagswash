@@ -2,9 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\assets",
+    "\\app\\assets\\images",
     "\\app\\views",
-    "\\app\\views\\pages"
+    "\\app\\views\\appointments",
+    "\\app\\views\\layouts",
+    "\\app\\views\\pages",
+    "\\config"
   ],
-  "SelectedNode": "\\Gemfile",
+  "SelectedNode": "\\app\\views\\layouts\\mailer.text.erb",
   "PreviewInSolutionExplorer": false
 }
