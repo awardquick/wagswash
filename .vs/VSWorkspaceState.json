@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
     "\\app\\views",
     "\\app\\views\\pages"
   ],
-  "SelectedNode": "\\app\\controllers\\pages_controller.rb",
+  "SelectedNode": "\\Gemfile",
   "PreviewInSolutionExplorer": false
 }
